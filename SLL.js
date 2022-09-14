@@ -42,6 +42,19 @@ class SLL {
       return runner.value === value ? true : false;
     }
   }
+
+  length() {
+    let runner = this.head;
+    console.log("this is runner.value", runner.value);
+    let length = 0;
+    while (runner !== null) {
+      if (runner.value !== null) {
+        length++;
+        runner = runner.next;
+      }
+    }
+    return length;
+  }
 }
 
 let mySLL = new SLL();
@@ -52,3 +65,4 @@ mySLL.addFront(5);
 // console.log(mySLL);
 // mySLL.removeFront();
 console.log(mySLL.contains(4));
+console.log(mySLL.length());
