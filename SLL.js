@@ -55,6 +55,25 @@ class SLL {
     }
     return length;
   }
+
+  display() {
+    let runner = this.head;
+    let result = "";
+    while (runner !== null) {
+      // let string = runner.value.toString();
+      // return runner.next === null
+      //   ? ((result += string), (runner = runner.next))
+      //   : ((result += string + ", "), (runner = runner.next));
+      if (runner.next === null) {
+        result += runner.value;
+        runner = runner.next;
+      } else {
+        result = result + runner.value + ", ";
+        runner = runner.next;
+      }
+    }
+    return result;
+  }
 }
 
 let mySLL = new SLL();
@@ -64,5 +83,7 @@ mySLL.addFront(5);
 // mySLL.addFront(7);
 // console.log(mySLL);
 // mySLL.removeFront();
-console.log(mySLL.contains(4));
-console.log(mySLL.length());
+// console.log(mySLL.contains(4));
+// console.log(mySLL.length());
+mySLL.addFront(11.2);
+console.log(mySLL.display());
