@@ -35,15 +35,20 @@ class SLL {
     // }
     return this.head ? this.head.value : null;
   }
+
+  contains(value) {
+    let runner = this.head;
+    while (runner !== null) {
+      return runner.value === value ? true : false;
+    }
+  }
 }
 
 let mySLL = new SLL();
 mySLL.addFront(10);
-console.log(mySLL);
 mySLL.addFront(5);
 // console.log(mySLL);
 // mySLL.addFront(7);
 // console.log(mySLL);
 // mySLL.removeFront();
-console.log(mySLL);
-console.log("this is front", mySLL.front());
+console.log(mySLL.contains(4));
